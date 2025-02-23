@@ -1,0 +1,176 @@
+Here are 20 commonly asked JavaScript output-based interview questions along with their answers. These questions are designed to test your understanding of JavaScript concepts such as closures, hoisting, event loop, scope, and more.
+
+1. What is the output of the following code?
+javascript
+Copy
+console.log(typeof null);
+Answer: "object"
+Explanation: In JavaScript, typeof null returns "object" due to a historical bug in the language.
+
+2. What is the output of the following code?
+javascript
+Copy
+console.log(1 + "2" + "2");
+Answer: "122"
+Explanation: The + operator performs string concatenation when one of the operands is a string.
+
+3. What is the output of the following code?
+javascript
+Copy
+console.log(1 == "1");
+console.log(1 === "1");
+Answer:
+true
+false
+Explanation: == performs type coercion, while === checks both value and type.
+
+4. What is the output of the following code?
+javascript
+Copy
+let a = 10;
+function foo() {
+    console.log(a);
+    let a = 20;
+}
+foo();
+Answer: ReferenceError: Cannot access 'a' before initialization
+Explanation: let variables are hoisted but not initialized, causing a temporal dead zone.
+
+5. What is the output of the following code?
+javascript
+Copy
+console.log([] + []);
+Answer: "" (empty string)
+Explanation: Arrays are converted to strings, and empty arrays become empty strings.
+
+6. What is the output of the following code?
+javascript
+Copy
+console.log(0.1 + 0.2 === 0.3);
+Answer: false
+Explanation: Due to floating-point precision issues, 0.1 + 0.2 results in 0.30000000000000004.
+
+7. What is the output of the following code?
+javascript
+Copy
+console.log(typeof NaN);
+Answer: "number"
+Explanation: NaN is of type number in JavaScript.
+
+8. What is the output of the following code?
+javascript
+Copy
+let x = 1;
+if (function f() {}) {
+    x += typeof f;
+}
+console.log(x);
+Answer: "1undefined"
+Explanation: The function f is defined inside the if block but is not accessible outside, so typeof f is "undefined".
+
+9. What is the output of the following code?
+javascript
+Copy
+console.log([] == ![]);
+Answer: true
+Explanation: ![] is false, and [] is coerced to "", which is falsy. So, "" == false evaluates to true.
+
+10. What is the output of the following code?
+javascript
+Copy
+console.log(typeof undefined == typeof NULL);
+Answer: true
+Explanation: NULL is treated as an undeclared variable (not the same as null), so typeof NULL is "undefined".
+
+11. What is the output of the following code?
+javascript
+Copy
+console.log(1 < 2 < 3);
+console.log(3 > 2 > 1);
+Answer:
+true
+false
+Explanation:
+
+1 < 2 < 3 becomes true < 3, which is 1 < 3 (true).
+
+3 > 2 > 1 becomes true > 1, which is 1 > 1 (false).
+
+12. What is the output of the following code?
+javascript
+Copy
+let a = { x: 1 };
+let b = a;
+a.x = 2;
+console.log(b.x);
+Answer: 2
+Explanation: Objects are assigned by reference, so b points to the same object as a.
+
+13. What is the output of the following code?
+javascript
+Copy
+console.log("5" - 3);
+console.log("5" + 3);
+Answer:
+2
+"53"
+Explanation: The - operator converts strings to numbers, while + performs string concatenation.
+
+14. What is the output of the following code?
+javascript
+Copy
+console.log(typeof function() {});
+Answer: "function"
+Explanation: Functions are of type "function" in JavaScript.
+
+15. What is the output of the following code?
+javascript
+Copy
+console.log([] == 0);
+console.log([] == "");
+Answer:
+true
+true
+Explanation: [] is coerced to "" (empty string), and "" == 0 is true.
+
+16. What is the output of the following code?
+javascript
+Copy
+console.log(!!"false" == !!"true");
+Answer: true
+Explanation: Both "false" and "true" are truthy, so !!"false" and !!"true" are both true.
+
+17. What is the output of the following code?
+javascript
+Copy
+console.log(setTimeout(() => console.log("Hello"), 0));
+Answer: 1 (or some other number representing the timer ID)
+Explanation: setTimeout returns a timer ID, and the callback is executed asynchronously.
+
+18. What is the output of the following code?
+javascript
+Copy
+let a = 10;
+function foo() {
+    console.log(a);
+    var a = 20;
+}
+foo();
+Answer: undefined
+Explanation: var is hoisted, so a is declared but not initialized at the time of logging.
+
+19. What is the output of the following code?
+javascript
+Copy
+console.log("b" + "a" + +"a" + "a");
+Answer: "baNaNa"
+Explanation: +"a" results in NaN, so the expression becomes "b" + "a" + "NaN" + "a".
+
+20. What is the output of the following code?
+javascript
+Copy
+console.log(typeof typeof 1);
+Answer: "string"
+Explanation: typeof 1 returns "number", and typeof "number" returns "string".
+
+These questions cover a wide range of JavaScript concepts and are commonly used in interviews to test your understanding of the language. Practice them thoroughly!
